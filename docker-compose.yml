@@ -1,0 +1,14 @@
+services:
+  ghibli-back:
+    build: .
+    ports:
+      - "5000:5287"
+    depends_on:
+      - redis
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+
+  redis:
+    image: "redis:latest"
+    ports:
+      - "6379:6379"
